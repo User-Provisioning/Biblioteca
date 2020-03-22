@@ -1,21 +1,7 @@
-var ocupados = [
-            "A0",
-            "D4"
-          ];
-
-
-
-
-          
+        
 $(document).tooltip();
 $(document).ready(function(){
 
-  //console.log("jQuery y la web cargados");
-
-
-  /*libros.forEach((item, index) =>{
-    if( )
-  };*/
   //post forEach
   libros.forEach((item, index) =>{
       var libro = `
@@ -24,7 +10,7 @@ $(document).ready(function(){
         <h2>${item.nombre}</h2>
         <br><p>
         Autor: ${item.autor}<br>
-        ID: ${item.id}<br>
+        ID: ${index}<br>
         Genero: ${item.genero}<br>
         Editorial: ${item.editorial}<br>
         Paginas: ${item.paginas}<br>
@@ -36,28 +22,17 @@ $(document).ready(function(){
     if(disponibilidad === true){
       $('#libros').append(libro);
     }else{
-      console.log(item.nombre+"  no disponible");
+      var unavailable = `
+      <li>${index} - ${item.nombre}</li>
+      `
+      $('#unavailable').append(unavailable);
     };
-
   });
-
 });
 
 //libros json
 var libros = [
   {
-    "id": "A0",
-    "nombre": "",
-    "autor": "",
-    "genero": "",
-    "editorial": "",
-    "paginas": "",
-    "sinopsis": "",
-    "pertenece a": "",
-    "disponible": false
-  },//plantilla
-  {
-    "id":  "A1",
     "nombre": "La lluvia sabe por qué",
     "autor": "María Fernanda Heredia",
     "genero": "Amistad, Novela juvenil",
@@ -509,23 +484,24 @@ var libros = [
   },//Padre rico padre pobre
 ];
 
+/*
+  var plantilla = {
+      "id": "A0",
+      "nombre": "",
+      "autor": "",
+      "genero": "",
+      "editorial": "",
+      "paginas": "",
+      "sinopsis": "",
+      "pertenece a": "",
+      "disponible": false
+    },//plantilla
+*/
 
-
-
-/*Plantilla
-{
-  "ID": 00,
-  "nombre": "",
-  "autor": "",
-  "genero": "",
-  "editorial": "",
-  "paginas": ,
-  "sinopsis": "",
-  "pertenece a": "",
-  "disponible": true
-},//
-
-libros.sort(function(a,b){
-  return a.nombre-b.nombre
-});*/
 console.log(libros);
+
+//Libros no disponibles
+libros[5].disponible=false;
+libros[7].disponible=false;
+libros[30].disponible=false;
+
