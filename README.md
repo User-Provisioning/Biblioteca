@@ -39,3 +39,13 @@ Git clone https://github.com/devcherry1/test.git
 Git push #guardar cambios locales en la nube
 
 Git pull #traer los cambios de la nube al repositorio local
+
+Git merge branch #con el nombre de la rama individual que se desea combinar.
+
+Git mergetool #ayudante de fusión externo
+
+git branch -d nombre_rama #eliminar rama ya fusionada
+
+git branch -D nombre-rama #forzar eliminacion de rama
+
+git push origin :nombre-rama #En el caso de querer eliminar una rama del repositorio remoto
