@@ -1,4 +1,3 @@
-        
 $(document).tooltip();
 $(document).ready(function(){
 
@@ -504,4 +503,3 @@ console.log(libros);
 libros[5].disponible=false;
 libros[7].disponible=false;
 libros[30].disponible=false;
-
